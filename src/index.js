@@ -10,10 +10,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/RutaApp.scss';
 
 ReactDOM.render(
+  
   <React.StrictMode>
     <BrowserRouter>
       <RutaApp />
     </BrowserRouter>
   </React.StrictMode>,
+
   document.getElementById('root')
+  
 );

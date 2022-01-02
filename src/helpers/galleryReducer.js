@@ -76,11 +76,9 @@ export const galleryReducer = ( state, action ) => {
 }
 
 const orderImagesByFilter = ( images, orden ) => {
-
   if( orden === 'asc' ) {
     return images.sort( ( a, b ) => a.time - b.time );
   } else {
     return images.sort( ( b, a ) => a.time - b.time );
   }
-
 }

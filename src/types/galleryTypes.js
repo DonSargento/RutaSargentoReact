@@ -7,6 +7,6 @@ export const galleryTypes = {
   gotoPage : 'goto_page',
   setCountryFilter : 'set_country_filter',
   setOrderFilter : 'set_order_filter', // Orden cronológico ( 'asc' || 'desc' )
-  setNumeroImagenes : 'set_numero_imagenes',
+  setNumeroImagenes : 'set_numero_imagenes'
 
 }

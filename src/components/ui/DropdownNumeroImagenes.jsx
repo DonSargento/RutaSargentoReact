@@ -48,4 +48,4 @@ const DropdownNumeroImagenes = () => {
 
 }
 
-export default DropdownNumeroImagenes
+export default DropdownNumeroImagenes;

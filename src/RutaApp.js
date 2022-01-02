@@ -43,4 +43,4 @@ const RutaApp = () => {
   )
 }
 
-export default RutaApp;
+export default RutaApp

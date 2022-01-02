@@ -39,4 +39,4 @@ const DropdownOrdenImagenes = () => {
   )
 }
 
-export default DropdownOrdenImagenes;
+export default DropdownOrdenImagenes

@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { Dropdown } from "react-bootstrap"
 import MainContext from "../../context/MainContext";
 import { galleryTypes } from "../../types/galleryTypes";

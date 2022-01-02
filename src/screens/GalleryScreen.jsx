@@ -1,6 +1,6 @@
 
 import { useContext, useEffect } from 'react';
-import { Col, Container, Dropdown, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import FotoItem from '../components/FotoItem';
 import MainContext from '../context/MainContext';

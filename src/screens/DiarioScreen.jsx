@@ -7,4 +7,4 @@ const DiarioScreen = () => {
   )
 }
 
-export default DiarioScreen;
+export default DiarioScreen

@@ -114,4 +114,4 @@ Paginacion.propTypes = {
   dispatch : PropTypes.func.isRequired,
 }
 
-export default Paginacion;
+export default Paginacion
