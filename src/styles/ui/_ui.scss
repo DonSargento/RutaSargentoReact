@@ -1,0 +1,33 @@
+
+#DropdownPaises {
+
+  button.dropdown-toggle {
+
+    &::after {
+      margin-left: 1em;
+    }
+
+  }
+
+  .dropdown-menu {
+
+    .dropdown-item {
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      span {
+        font-size: 0.7em;
+        padding-left: 2em;
+        // &::before { content: '('; }
+        // &::after { content: ')'; }
+      }
+
+    }
+
+  }
+
+
+
+}
