@@ -1,0 +1,100 @@
+
+
+.FotoItem {
+
+  position: relative;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  
+  .FotoItemThumb {
+    width: 100%;
+  }
+
+  &:hover .FotoItemInfo {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .FotoItemInfo {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba( 0, 0, 0, 0.7 );
+    height: 100%;
+    width: 100%;
+    padding: 0 0.6rem;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    .FotoItemFlag {
+      width: 35%;
+      min-width: 40px;
+      max-width: 60px;
+      border: 1px solid white;
+    }
+
+    h4 {
+      font-size: 1.1em;
+      text-transform: uppercase;
+      margin: 1em 0 0.7em;
+    }
+
+    p {
+
+      line-height: 1.2em;
+      font-size : 0.9em;
+      margin: 0;
+
+      &.FotoItemCiudadEstado {
+      }
+      &.FotoItemPais {
+        // font-weight: 400;
+        text-transform: uppercase;
+      }
+      &.FotoItemFecha {
+        font-size: 0.7em;
+      }
+      
+    }
+
+  }
+
+}
+
+@media all and ( max-width: 991px ){
+
+  .FotoItem {
+
+    color: #000;
+
+    .FotoItemInfo {
+      transition: none;
+      opacity: 1.0;
+      position: relative;
+      width: 100%;
+      height: auto;
+      background-color: transparent;
+      padding: 0 1rem 1rem;
+      margin-top: -12px;
+      visibility: visible;
+
+      .FotoItemFlag {
+        
+      }
+
+      h4 {
+        margin-top: 0.5em;
+      }
+
+    }
+  }
+
+}
+

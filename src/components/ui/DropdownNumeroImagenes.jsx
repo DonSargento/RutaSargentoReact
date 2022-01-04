@@ -19,9 +19,8 @@ const DropdownNumeroImagenes = () => {
   }
 
   return (
-    <Row className="align-items-center">
-
-      <Col xs='auto'><span>Imágenes por página</span></Col>
+    <Row id='DropdownNumeroImagenes' className="align-items-center justify-content-center">
+      <Col xs='auto' className='pe-0'><span>Imágenes por página</span></Col>
       <Col xs='auto'>
         <Dropdown>
           <Dropdown.Toggle>

@@ -1,34 +1,50 @@
 
 import PropTypes from 'prop-types'
+import { useContext } from 'react';
 import { Col, Image } from 'react-bootstrap'
+import MainContext from '../context/MainContext';
+import { htmlDecode } from '../helpers/htmlEntities';
 
 const FotoItem = ( { imgInfo } ) => {
+
+  const { paises, handleShowGalleryModal } = useContext( MainContext );
 
   const {
     // ID,
     // ciudad,
     // estado,
-    // pais,
-    // pais_slug,
+    pais,
+    pais_slug,
     titulo,
     // contenido,
-    // anio,
-    // mes,
+    anio,
+    mes,
     // mes_str,
-    // dia,
+    dia,
     // hora,
     // minutos,
     // fecha,
-    // image_url_6,
+    // image_url_8,
     // thumb_id,
-    thumb_url_2,
-    // thumb_url_4
+    // thumb_url_2,
+    thumb_url_4
   } = imgInfo;
 
+  const banderaURL = paises.find( ( p ) => p.slug === pais_slug ).bandera_url;
+
+  // console.log( imgInfo.titulo );
+
   return (
-    <Col xs={6} sm={4} md={3} lg={2} >
-      <div>
-        <Image fluid={ true } src={ thumb_url_2 } alt={ titulo } className='w-100' />
+    <Col xs={ 6 } sm={4} md={3} xl={2} >
+      <div className="FotoItem" onClick={ () => handleShowGalleryModal( imgInfo ) }>
+        <Image className="FotoItemThumb" fluid={ true } src={ thumb_url_4 } alt={ titulo } />
+        <div className="FotoItemInfo">
+          <Image className="FotoItemFlag mx-auto" src={ banderaURL } alt={ pais } />
+          <h4>{ htmlDecode( titulo ) }</h4>
+          {/* <p className='FotoItemCiudadEstado'>{ ciudad },<br/>{ estado }</p> */}
+          {/* <p className='FotoItemPais'>{ pais }</p> */}
+          <p className='FotoItemFecha'>{ `${ String( dia ).padStart( 2, 0 ) }/${ String( mes ).padStart( 2, 0 ) }/${ anio }` }</p>
+        </div>
       </div>
     </Col>
   )
@@ -55,10 +71,11 @@ FotoItem.propTypes = {
               hora : PropTypes.number.isRequired,
               minutos : PropTypes.number.isRequired,
               fecha : PropTypes.string.isRequired,
-              image_url_6 : PropTypes.string.isRequired,
+              // image_url_6 : PropTypes.string.isRequired,
+              image_url_8 : PropTypes.string.isRequired,
               thumb_id : PropTypes.number.isRequired,
-              thumb_url_2 : PropTypes.string.isRequired,
-              // thumb_url_4 : PropTypes.string.isRequired,
+              // thumb_url_2 : PropTypes.string.isRequired,
+              thumb_url_4 : PropTypes.string.isRequired,
             } )
 }
 

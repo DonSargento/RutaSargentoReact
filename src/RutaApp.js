@@ -15,8 +15,20 @@ const RutaApp = () => {
 
   // Listado de países
   const [ paises, setPaises ] = useState( [] );
+  
   // Listado de Imágenes de la galería
   const [ imagenes, setImagenes ] = useState( [] );
+
+  // State y funciones del Modal de la Galería de Imágenes
+  const [ showGalleryModal, setShowGalleryModal ] = useState( false );
+  const [ imgInfoModal, setImgInfoModal ] = useState({});
+  const handleCloseGalleryModal = () => {
+    setShowGalleryModal( false );
+  }
+  const handleShowGalleryModal = ( imgInfo = {} ) => {
+    setImgInfoModal( imgInfo );
+    setShowGalleryModal( true );
+  };
 
   // Detalles de la galería ( Reducer )
   const [ galleryDetails, galleryDispatch ] = useReducer( galleryReducer, {}, galleryInit );
@@ -25,9 +37,17 @@ const RutaApp = () => {
     <MainContext.Provider
       value={
         {
+          
           paises, setPaises,
           imagenes, setImagenes,
-          galleryDetails, galleryDispatch
+
+          galleryDetails, galleryDispatch,
+
+          // De Modal de la Galería de Imágenes
+          showGalleryModal, setShowGalleryModal,
+          imgInfoModal, setImgInfoModal,
+          handleCloseGalleryModal, handleShowGalleryModal,
+
         }
       }
     >

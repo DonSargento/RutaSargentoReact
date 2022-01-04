@@ -1,13 +1,72 @@
 
-#DropdownPaises {
+// Dropdowns
 
-  button.dropdown-toggle {
+.dropdown {
 
-    &::after {
-      margin-left: 1em;
+  &.show {
+
+    button.dropdown-toggle {
+      // background-color: transparent;
+      // color: #000;
+      // box-shadow: none;
+
+      &:focus, &:active {
+        box-shadow: none;
+      }
+
     }
 
   }
+  
+  button.dropdown-toggle {
+    
+    padding: {
+      top: 0.3em;
+      right: 0.4em;
+      bottom: 0.3em;
+      left: 0.6em;
+    } 
+    font-weight: 500;
+    color: #000 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: {
+      radius: 0;
+      width: 0 0 1px 0;
+      color: #000;
+    }
+
+    &:focus, &:active {
+      box-shadow: none;
+    }
+
+    &::after {
+      margin-left: 0.6em;
+    }
+  
+  }
+
+  .dropdown-menu {
+
+    min-width: auto;
+    transform: translate( 0, 39px ) !important;
+    border-radius: 0;
+    box-shadow: 0 7px 16px rgba( 0, 0, 0, 0.35 );
+
+    .dropdown-item {
+      font-weight: 300;
+      &.active {
+        font-weight: 500;
+        background-color: $clrAmarillo;
+        color: #000;
+      }
+    }
+
+  }
+
+}
+
+#DropdownPaises {
 
   .dropdown-menu {
 
@@ -28,6 +87,74 @@
 
   }
 
+}
 
+.Paginacion {
 
+  .pagination {
+
+    .page-item {
+
+      .page-link {
+        text-align: center;
+        padding: 0.5em 0.7em;
+        line-height: 1em;
+        color: #000;
+        border-style: none;
+        font-size: 1rem;
+        border-radius: 0;
+      }
+
+      &.active .page-link {
+        background-color: $clrAmarillo;
+        font-weight: 500;
+      }
+
+    }
+
+  }
+
+}
+
+.ModalGaleria {
+
+  .modal-title {
+    text-transform: uppercase;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+
+  & &Footer {
+    display : block;
+    padding: 1rem 2rem;
+  }
+
+    & &Contenido {
+      text-align: center;
+      font-size: 1.1rem;
+      border-bottom: 1px solid black;
+    }
+    & &LugarFecha {
+
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.8rem;
+      
+      p {
+        margin : 0;
+      }
+
+    }
+
+}
+
+@media all and( max-width: 500px ){
+  .ModalGaleria {
+    & &LugarFecha {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }

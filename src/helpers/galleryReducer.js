@@ -8,7 +8,7 @@ export const galleryInit = () => {
     current_page    : 1,
     total_pages     : 0,
     items_per_page  : 36,
-    country_name    : 'Todos los países',
+    country_name    : 'Todos',
     country_filter  : 'all', // slug
     order_filter    : 'asc',
   }

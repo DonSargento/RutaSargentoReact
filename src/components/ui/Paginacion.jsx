@@ -1,6 +1,6 @@
 
 import PropTypes from 'prop-types'
-import { Pagination } from 'react-bootstrap'
+import { Row, Col, Pagination } from 'react-bootstrap'
 import { galleryTypes } from '../../types/galleryTypes';
 
 const Paginacion = ( { ttl_pags, curr_pag, dispatch } ) => {
@@ -16,6 +16,7 @@ const Paginacion = ( { ttl_pags, curr_pag, dispatch } ) => {
     handleGotoPage( curr_pag - 1 );
   }
   const handleGotoPage = ( pag ) => {
+    window.scrollTo( 0, 0 );
     dispatch( {
       type : galleryTypes.gotoPage,
       payload : pag
@@ -77,29 +78,33 @@ const Paginacion = ( { ttl_pags, curr_pag, dispatch } ) => {
   }
 
   return (
-    <Pagination size='sm'>
-      { curr_pag > 1 && <Pagination.Prev
-        key='prev'
-        onClick={ handlePrevPage }
-      /> }
-      {
-        ttl_pags <= 10
-          // En caso de que sean menos de 10 páginas
-          ? ( [...Array( ttl_pags )] ).map( ( e, i ) =>
-            <Pagination.Item
-              key={ i + 1 }
-              active={ curr_pag === i + 1 }
-              onClick={ () => handleGotoPage( i + 1 ) }
-            >{ i + 1 }</Pagination.Item>
-          )
-          // Cuando sean más de 10 páginas
-          : createLongPagination()
-      }
-      { curr_pag < ttl_pags && <Pagination.Next
-        key='next'
-        onClick={ handleNextPage }
-      /> }
-    </Pagination>
+    <Row className="justify-content-center Paginacion">
+      <Col xs='auto'>
+        <Pagination size='sm' className='my-0'>
+          { curr_pag > 1 && <Pagination.Prev
+            key='prev'
+            onClick={ handlePrevPage }
+          /> }
+          {
+            ttl_pags <= 10
+              // En caso de que sean menos de 10 páginas
+              ? ( [...Array( ttl_pags )] ).map( ( e, i ) =>
+                <Pagination.Item
+                  key={ i + 1 }
+                  active={ curr_pag === i + 1 }
+                  onClick={ () => handleGotoPage( i + 1 ) }
+                >{ i + 1 }</Pagination.Item>
+              )
+              // Cuando sean más de 10 páginas
+              : createLongPagination()
+          }
+          { curr_pag < ttl_pags && <Pagination.Next
+            key='next'
+            onClick={ handleNextPage }
+          /> }
+        </Pagination>
+      </Col>
+    </Row>
   )
 }
 

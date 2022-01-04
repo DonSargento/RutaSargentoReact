@@ -1,0 +1,25 @@
+
+$clrAmarillo : rgb(255, 208, 0);
+
+// -----------------------------------
+
+body, html {
+
+  font : {
+    family: 'Oswald', sans-serif;
+    weight: 300;
+    size: 18px;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1.TituloSeccion {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  letter-spacing: -0.04em;
+}
