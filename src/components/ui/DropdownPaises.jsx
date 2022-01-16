@@ -38,7 +38,7 @@ const DropdownPaises = () => {
     // setTimeout( () => selCountryRef.current.blur(), 100 );
 
   }
-
+  
   return (
     <Row id='DropdownPaises' className="align-items-center justify-content-center">
       <Col xs='auto' className='pe-0'><span>País</span></Col>
